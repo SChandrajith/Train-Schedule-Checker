@@ -1,0 +1,33 @@
+{
+  "routes": [
+    {
+      "id": "awissawella_route",
+      "name": "Awissawella Route",
+      "locations": [
+        {
+          "latitude": 6.9522325,
+          "longitude": 80.2125947,
+          "name": "Avissawella"
+        },
+        {
+          "latitude": 6.941904,
+          "longitude": 80.1984905,
+          "name": "Kiriwandala"
+        },
+        {
+          "latitude": 6.9408333,
+          "longitude": 80.1941643,
+          "name": "Puwakpitiya"
+        },
+        { "latitude": 6.9349, "longitude": 80.1701, "name": "Hingurala" },
+        {
+          "latitude": 7.0733806,
+          "longitude": 80.0163342,
+          "name": "Miriswatte"
+        },
+        { "latitude": 6.9348, "longitude": 80.1504, "name": "Aluth Ambalama" },
+        { "latitude": 6.9406343, "longitude": 80.1370564, "name": "Kosgama" }
+      ]
+    }
+  ]
+}
