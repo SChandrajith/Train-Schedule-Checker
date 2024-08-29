@@ -1,2 +1,7 @@
 /Server/node_modules/
+/Server/package-lock.json
+/Server/package.json
+
 /IOT Device/node_modules
+/IOT Device/package-lock.json
+/IOT Device/package.json
