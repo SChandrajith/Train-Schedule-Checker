@@ -27,6 +27,36 @@
         { "latitude": 6.9348, "longitude": 80.1504, "name": "Aluth Ambalama" },
         { "latitude": 6.9406343, "longitude": 80.1370564, "name": "Kosgama" }
       ]
+    },
+    {
+      "id": 2,
+      "locations": [
+        {
+          "latitude": 6.933760100000001,
+          "longitude": 79.85007647231905,
+          "name": "Colombo fort"
+        },
+        {
+          "latitude": 6.9348,
+          "longitude": 80.1504,
+          "name": "Kosgama"
+        },
+        {
+          "latitude": 6.0441605,
+          "longitude": 80.7350365,
+          "name": "Beliatta"
+        },
+        {
+          "latitude": 6.9253683,
+          "longitude": 79.9491601,
+          "name": "Udahamulla"
+        },
+        {
+          "latitude": 6.8550625,
+          "longitude": 79.9134314,
+          "name": "Colombo fort"
+        }
+      ]
     }
   ]
 }
