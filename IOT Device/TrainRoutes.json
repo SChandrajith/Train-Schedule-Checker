@@ -2,7 +2,6 @@
   "routes": [
     {
       "id": 1,
-      "name": "Awissawella Route",
       "locations": [
         {
           "latitude": 6.9522325,
