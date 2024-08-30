@@ -1,8 +1,8 @@
 const fs = require("fs");
 const axios = require("axios");
 
-// Path to your JSON file
-const jsonFilePath = "TrainRoutes.json"; // Replace with the actual path
+// Path JSON file
+const jsonFilePath = "TrainRoutes.json";
 // Desired route ID
 const routeId = "awissawella_route";
 // Server URL
@@ -13,15 +13,15 @@ function readJSONFile(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, "utf8", (err, data) => {
       if (err) {
-        reject(err); // If there is an error, reject the promise with the error
+        reject(err); // If  error, reject the promise
       } else {
-        resolve(JSON.parse(data)); // If no error, parse the JSON data and resolve the promise
+        resolve(JSON.parse(data)); // If no error, parse JSON data and resolve the promise
       }
     });
   });
 }
 
-// Function to send location data to the server
+// send location data to the server
 async function sendLocationData(data) {
   try {
     const response = await axios.post(serverUrl, data, {
@@ -61,13 +61,13 @@ async function startSendingData() {
         } else {
           clearInterval(interval);
           console.log("sent");
-          ascending = !ascending; // Toggle the order for the next cycle
-          setTimeout(sendAllLocations, 5000); // Wait for 1 minute before sending data again
+          ascending = !ascending;
+          setTimeout(sendAllLocations, 5000); // Wait for 1 min
         }
-      }, 1000); // 1 second interval for sending data
+      }, 1000);
     };
 
-    sendAllLocations(); // Start the initial data sending
+    sendAllLocations(); //  data sending
   } catch (error) {
     console.error("Error:", error);
   }
