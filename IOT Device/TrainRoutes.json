@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "id": "awissawella_route",
+      "id": 1,
       "name": "Awissawella Route",
       "locations": [
         {

@@ -1,13 +1,13 @@
 const fs = require("fs");
 const axios = require("axios");
+require("dotenv").config();
 
 // Path JSON file
 const jsonFilePath = "TrainRoutes.json";
 // Desired route ID
-const routeId = "awissawella_route";
+const routeId = 1;
 // Server URL
-const serverUrl = "http://localhost:3000/receive-data";
-
+const serverUrl = process.env.SERVER_URL;
 // Function to read JSON file
 function readJSONFile(filePath) {
   return new Promise((resolve, reject) => {
