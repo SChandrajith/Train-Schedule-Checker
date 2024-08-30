@@ -1,8 +1,24 @@
+const Location = require("./models/locationModel");
 const express = require("express");
 const bodyParser = require("body-parser");
+require("dotenv").config();
+const mongoose = require("mongoose");
 
+const mongoUri = process.env.MONGO_URL;
 const app = express();
 const PORT = 3000;
+
+mongoose
+  .connect(mongoUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+  });
 
 app.use(bodyParser.json());
 
