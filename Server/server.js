@@ -1,18 +1,18 @@
-const Location = require("./models/locationModel");
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const mongoose = require("mongoose");
+const path = require("path");
+const Location = require("./models/locationModel");
 
 const mongoUri = process.env.MONGO_URL;
 const app = express();
 const PORT = 3000;
 
+// MongoDB connection string from .env
+
 mongoose
-  .connect(mongoUri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoUri)
   .then(() => {
     console.log("Connected to MongoDB");
   })
