@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const TrainLocation = require("../models/TrainLocation");
+const TrainLocation = require("../models/trainLocationModel");
 
 const app = express();
 app.use(bodyParser.json());
@@ -10,11 +10,15 @@ app.use(bodyParser.json());
 const mongoUri = process.env.MONGO_URL;
 
 mongoose
-  .connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => console.error("Error connecting to MongoDB:", error));
+  .connect(mongoUri)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+  });
 
-app.post("/train-locations", async (req, res) => {
+app.post("/update-location", async (req, res) => {
   try {
     const { trainId, latitude, longitude } = req.body;
 

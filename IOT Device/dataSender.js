@@ -57,7 +57,7 @@ async function startSendingData(routeId, route) {
         clearInterval(interval);
         console.log(`All data sent successfully for route ${routeId}`);
         ascending = !ascending;
-        setTimeout(sendAllLocations, 5000); // Wait for 1 minute before sending data again
+        setTimeout(sendAllLocations, 60000); // Wait for 1 minute before sending data again
       }
     }, 1000); // 1 second interval for sending data
   };
