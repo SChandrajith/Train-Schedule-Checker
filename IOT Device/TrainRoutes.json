@@ -1,61 +1,223 @@
 {
   "routes": [
     {
-      "id": 1,
-      "locations": [
-        {
-          "latitude": 6.9522325,
-          "longitude": 80.2125947,
-          "name": "Avissawella"
-        },
-        {
-          "latitude": 6.941904,
-          "longitude": 80.1984905,
-          "name": "Kiriwandala"
-        },
-        {
-          "latitude": 6.9408333,
-          "longitude": 80.1941643,
-          "name": "Puwakpitiya"
-        },
-        { "latitude": 6.9349, "longitude": 80.1701, "name": "Hingurala" },
-        {
-          "latitude": 7.0733806,
-          "longitude": 80.0163342,
-          "name": "Miriswatte"
-        },
-        { "latitude": 6.9348, "longitude": 80.1504, "name": "Aluth Ambalama" },
-        { "latitude": 6.9406343, "longitude": 80.1370564, "name": "Kosgama" }
-      ]
-    },
-    {
-      "id": 2,
+      "id": "train1",
       "locations": [
         {
           "latitude": 6.933760100000001,
           "longitude": 79.85007647231905,
-          "name": "Colombo fort"
+          "name": "Colombo Fort"
         },
+        { "latitude": 6.926472, "longitude": 79.8640039, "name": "Maradana" },
         {
-          "latitude": 6.9348,
-          "longitude": 80.1504,
-          "name": "Kosgama"
+          "latitude": 6.90572655,
+          "longitude": 79.88212971909357,
+          "name": "Narahenpita"
         },
+        { "latitude": 6.8786673, "longitude": 79.874506, "name": "Kirulapone" },
+        { "latitude": 6.8472783, "longitude": 79.9266082, "name": "Maharagama" }
+      ]
+    },
+    {
+      "id": "train2",
+      "locations": [
         {
           "latitude": 6.0441605,
           "longitude": 80.7350365,
-          "name": "Beliatta"
+          "name": "Pengiriwatte"
         },
         {
           "latitude": 6.9253683,
           "longitude": 79.9491601,
           "name": "Udahamulla"
         },
+        { "latitude": 6.8550625, "longitude": 79.9134314, "name": "Nawinna" },
         {
-          "latitude": 6.8550625,
-          "longitude": 79.9134314,
-          "name": "Colombo fort"
+          "latitude": 6.9522325,
+          "longitude": 80.2125947,
+          "name": "Avissawella"
+        },
+        {
+          "latitude": 7.698211,
+          "longitude": 80.66090797017742,
+          "name": "Matale"
         }
+      ]
+    },
+    {
+      "id": "train3",
+      "locations": [
+        { "latitude": 7.2940156, "longitude": 80.2392415, "name": "Alawwa" },
+        {
+          "latitude": 7.3352583,
+          "longitude": 80.3002463,
+          "name": "Polgahawela"
+        },
+        {
+          "latitude": 7.3239273,
+          "longitude": 80.3957479,
+          "name": "Rambukkana"
+        },
+        {
+          "latitude": 7.2642107,
+          "longitude": 80.5930652,
+          "name": "Peradeniya"
+        },
+        {
+          "latitude": 7.012402,
+          "longitude": 80.75716115484704,
+          "name": "Nuwara Eliya"
+        },
+        { "latitude": 7.0793775, "longitude": 79.8907632, "name": "Ja-Ela" }
+      ]
+    },
+    {
+      "id": "train4",
+      "locations": [
+        {
+          "latitude": 6.933760100000001,
+          "longitude": 79.85007647231905,
+          "name": "Kurunegala"
+        },
+        { "latitude": 7.2931208, "longitude": 80.6350358, "name": "Kandy" },
+        {
+          "latitude": 7.1190247499999995,
+          "longitude": 79.91598756451819,
+          "name": "Gampaha"
+        },
+        { "latitude": 7.1534492, "longitude": 80.0602466, "name": "Veyangoda" },
+        { "latitude": 7.2535626, "longitude": 80.1724994, "name": "Ambepussa" },
+        { "latitude": 7.0733806, "longitude": 80.0163342, "name": "Miriswatte" }
+      ]
+    },
+    {
+      "id": "train5",
+      "locations": [
+        { "latitude": 6.9348, "longitude": 80.1504, "name": "Cotta Road" },
+        {
+          "latitude": 6.9408333,
+          "longitude": 80.1941643,
+          "name": "Puwakpitiya"
+        },
+        { "latitude": 6.9406343, "longitude": 80.1370564, "name": "Kosgama" },
+        { "latitude": 6.9349, "longitude": 80.1701, "name": "Hingurala" },
+        { "latitude": 6.941904, "longitude": 80.1984905, "name": "Kiriwandala" }
+      ]
+    },
+    {
+      "id": "train6",
+      "locations": [
+        {
+          "latitude": 6.8472783,
+          "longitude": 79.9266082,
+          "name": "Maharagama"
+        },
+        {
+          "latitude": 7.2642107,
+          "longitude": 80.5930652,
+          "name": "Peradeniya"
+        },
+        {
+          "latitude": 7.698211,
+          "longitude": 80.66090797017742,
+          "name": "Matale"
+        },
+        {
+          "latitude": 6.0441605,
+          "longitude": 80.7350365,
+          "name": "Pengiriwatte"
+        },
+        { "latitude": 6.9253683, "longitude": 79.9491601, "name": "Udahamulla" }
+      ]
+    },
+    {
+      "id": "train7",
+      "locations": [
+        {
+          "latitude": 6.933760100000001,
+          "longitude": 79.85007647231905,
+          "name": "Colombo Fort"
+        },
+        { "latitude": 7.2940156, "longitude": 80.2392415, "name": "Alawwa" },
+        {
+          "latitude": 7.3352583,
+          "longitude": 80.3002463,
+          "name": "Polgahawela"
+        },
+        {
+          "latitude": 7.3239273,
+          "longitude": 80.3957479,
+          "name": "Rambukkana"
+        },
+        {
+          "latitude": 7.2642107,
+          "longitude": 80.5930652,
+          "name": "Peradeniya"
+        },
+        {
+          "latitude": 7.012402,
+          "longitude": 80.75716115484704,
+          "name": "Nuwara Eliya"
+        }
+      ]
+    },
+    {
+      "id": "train8",
+      "locations": [
+        {
+          "latitude": 7.1190247499999995,
+          "longitude": 79.91598756451819,
+          "name": "Gampaha"
+        },
+        { "latitude": 7.1534492, "longitude": 80.0602466, "name": "Veyangoda" },
+        { "latitude": 7.2535626, "longitude": 80.1724994, "name": "Ambepussa" },
+        { "latitude": 7.2940156, "longitude": 80.2392415, "name": "Alawwa" },
+        {
+          "latitude": 6.9522325,
+          "longitude": 80.2125947,
+          "name": "Avissawella"
+        }
+      ]
+    },
+    {
+      "id": "train9",
+      "locations": [
+        {
+          "latitude": 6.933760100000001,
+          "longitude": 79.85007647231905,
+          "name": "Kurunegala"
+        },
+        {
+          "latitude": 7.0733806,
+          "longitude": 80.0163342,
+          "name": "Miriswatte"
+        },
+        { "latitude": 6.9348, "longitude": 80.1504, "name": "Cotta Road" },
+        {
+          "latitude": 6.941904,
+          "longitude": 80.1984905,
+          "name": "Kiriwandala"
+        },
+        { "latitude": 6.9349, "longitude": 80.1701, "name": "Hingurala" }
+      ]
+    },
+    {
+      "id": "train10",
+      "locations": [
+        {
+          "latitude": 7.012402,
+          "longitude": 80.75716115484704,
+          "name": "Nuwara Eliya"
+        },
+        { "latitude": 7.0793775, "longitude": 79.8907632, "name": "Ja-Ela" },
+        {
+          "latitude": 6.90572655,
+          "longitude": 79.88212971909357,
+          "name": "Narahenpita"
+        },
+        { "latitude": 6.8786673, "longitude": 79.874506, "name": "Kirulapone" },
+        { "latitude": 6.8550625, "longitude": 79.9134314, "name": "Nawinna" },
+        { "latitude": 6.0407437, "longitude": 80.658265, "name": "Kosgama" }
       ]
     }
   ]
