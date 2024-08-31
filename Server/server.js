@@ -9,6 +9,19 @@ const server = new WebSocket.Server({ port: 8080 });
 server.on("connection", (socket) => {
   console.log("Client connected");
 
+  const trainIds = [
+    "train1",
+    "train2",
+    "train3",
+    "train4",
+    "train5",
+    "train6",
+    "train7",
+    "train8",
+    "train9",
+    "train10",
+  ];
+
   socket.on("message", async (message) => {
     console.log(`Received: ${message}`);
 
@@ -38,6 +51,23 @@ server.on("connection", (socket) => {
       socket.send("Invalid message type or missing ID");
     }
   });
+
+  setInterval(async () => {
+    for (const trainId of trainIds) {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/api/train-locations/${trainId}/latest`
+        );
+        server.clients.forEach((client) => {
+          if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(response.data));
+          }
+        });
+      } catch (error) {
+        console.error(`Error fetching data for ${trainId}:`, error);
+      }
+    }
+  }, 5000);
 
   socket.on("close", () => {
     console.log("Client disconnected");

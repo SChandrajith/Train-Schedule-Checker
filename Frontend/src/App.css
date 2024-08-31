@@ -36,3 +36,10 @@
 .route-item p {
   margin: 5px 0;
 }
+li {
+  transition: all 0.5s ease;
+}
+
+li.new-data {
+  background-color: yellow;
+}

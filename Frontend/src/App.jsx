@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import RouteList from "./components/RouteList";
 
 function App() {
-  const [routes, setRoutes] = useState([]);
   const [messages, setMessages] = useState([]);
-
-  const [idInput, setIdInput] = useState("");
-  const [socket, setSocket] = useState(null);
   const trainIds = [
     "train1",
     "train2",
@@ -22,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8080");
-    const fetchedRoutes = [];
+
     ws.onopen = () => {
       console.log("Connected to WebSocket server");
 
@@ -37,30 +33,34 @@ function App() {
 
     ws.onmessage = (event) => {
       const receivedData = JSON.parse(event.data);
-      setMessages((prev) => [...prev, receivedData]);
+      setMessages((prev) => {
+        // Update or add the received data, and sort the list by trainId or another key
+        const updatedMessages = prev.filter(
+          (msg) => msg.trainId !== receivedData.trainId
+        );
+        const newMessages = [...updatedMessages, receivedData];
+
+        // Optionally sort the data if needed
+        return newMessages.sort((a, b) => a.trainId.localeCompare(b.trainId));
+      });
     };
+
     ws.onclose = () => {
       console.log("Disconnected from WebSocket server");
     };
 
-    setSocket(ws);
-    console.log(messages);
-
-    // Cleanup interval on component unmount
     return () => ws.close();
   }, []);
 
   return (
     <div className='App'>
       <h1>Train Routes</h1>
-
       <RouteList routes={messages} />
     </div>
   );
 }
 
 export default App;
-
 // function App() {
 //   const [messages, setMessages] = useState([]);
 //   const [input, setInput] = useState("");
