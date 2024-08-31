@@ -76,7 +76,6 @@ server.on("connection", (socket) => {
 
 console.log("WebSocket server is running on ws://localhost:8080");
 
-const Location = require("./Models/LocationModel");
 const TrainLocation = require("./models/trainLocationModel");
 
 const mongoUri = process.env.MONGO_URL;
