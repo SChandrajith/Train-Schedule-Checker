@@ -6,6 +6,8 @@ function RouteItem({ route }) {
     return <div className='route-item no-data'>🚫 No data available</div>;
   }
 
+  console.log(route);
+
   return (
     <div className='route-item'>
       <div className='route-header'>
@@ -16,10 +18,7 @@ function RouteItem({ route }) {
       </div>
       <div className='route-body'>
         <p className='location'>
-          📍 <span className='label'>Latitude:</span> {route.latitude}
-        </p>
-        <p className='location'>
-          📍 <span className='label'>Longitude:</span> {route.longitude}
+          📍 <span className='label'>Station:</span> {route.name}
         </p>
       </div>
     </div>

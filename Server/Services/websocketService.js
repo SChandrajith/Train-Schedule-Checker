@@ -34,6 +34,8 @@ server.on("connection", (socket) => {
         const response = await axios.get(
           `http://localhost:3001/train-locations/${trainId}/latest`
         );
+
+        console.log(response);
         socket.send(JSON.stringify(response.data));
       } catch (error) {
         socket.send("Error fetching data from API");

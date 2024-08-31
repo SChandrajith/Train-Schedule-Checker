@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const TrainLocation = require("../models/trainLocationModel");
+const Location = require("../models/locationModel");
 
 const app = express();
 app.use(bodyParser.json());
@@ -50,8 +51,14 @@ app.get("/train-locations/:trainId/latest", async (req, res) => {
     if (!latestLocation) {
       return res.status(404).json({ error: "Train location not found" });
     }
+    const { latitude, longitude, timestamp } = latestLocation;
+    const location = await Location.findOne({ latitude, longitude });
 
-    res.status(200).json(latestLocation);
+    const { name } = location;
+
+    res.status(200).json({ trainId, latitude, longitude, name, timestamp });
+
+    // res.status(200).json(location);
   } catch (error) {
     res.status(500).json({ error: "Error retrieving location data" });
   }
