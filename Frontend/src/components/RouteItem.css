@@ -1,0 +1,77 @@
+/* RouteItem.css */
+.route-item {
+  background: linear-gradient(145deg, #ffffff, #f7f7f7);
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; 
+   max-width: 600px;
+  width: 100%; 
+  box-sizing: border-box; t
+}
+
+.route-item:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #f7f7f7, #ffffff);
+}
+
+.route-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.train-id {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #444;
+}
+
+.timestamp {
+  font-size: 1em;
+  color: #888;
+}
+
+.route-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.2em;
+}
+
+.location {
+  color: #555;
+}
+
+.label {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 40px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+/* Additional styles to make it ultra stylish */
+.route-item::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #007bff, transparent 70%);
+  opacity: 0.05;
+  transform: rotate(45deg);
+  z-index: -1;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RouteList from "./components/RouteList";
+import "./App.css";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -54,7 +55,9 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Train Routes</h1>
+      <header className='App-header'>
+        <h1>Live Train Routes</h1>
+      </header>
       <RouteList routes={messages} />
     </div>
   );
