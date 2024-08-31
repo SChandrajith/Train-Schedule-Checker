@@ -3,6 +3,10 @@ import RouteList from "./components/RouteList";
 
 function App() {
   const [routes, setRoutes] = useState([]);
+  const [messages, setMessages] = useState([]);
+
+  const [idInput, setIdInput] = useState("");
+  const [socket, setSocket] = useState(null);
   const trainIds = [
     "train1",
     "train2",
@@ -17,36 +21,45 @@ function App() {
   ];
 
   useEffect(() => {
-    const fetchRoutes = async () => {
-      const fetchedRoutes = [];
-      for (const trainId of trainIds) {
-        try {
-          const response = await fetch(
-            `http://localhost:3000/api/train-locations/${trainId}/latest`
-          );
-          const data = await response.json();
-          fetchedRoutes.push(data);
-        } catch (error) {
-          console.error(`Error fetching data for ${trainId}:`, error);
-        }
-      }
-      setRoutes(fetchedRoutes);
+    const ws = new WebSocket("ws://localhost:8080");
+    const fetchedRoutes = [];
+    ws.onopen = () => {
+      console.log("Connected to WebSocket server");
+
+      trainIds.forEach((id) => {
+        const message = JSON.stringify({
+          type: "fetch-data",
+          trainId: id,
+        });
+        ws.send(message);
+      });
     };
 
-    // Polling every 5 seconds
-    const intervalId = setInterval(fetchRoutes, 5000);
+    ws.onmessage = (event) => {
+      const receivedData = JSON.parse(event.data);
+      setMessages((prev) => [...prev, receivedData]);
+    };
+    ws.onclose = () => {
+      console.log("Disconnected from WebSocket server");
+    };
+
+    setSocket(ws);
+    console.log(messages);
 
     // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
+    return () => ws.close();
   }, []);
 
   return (
     <div className='App'>
       <h1>Train Routes</h1>
-      <RouteList routes={routes} />
+
+      <RouteList routes={messages} />
     </div>
   );
 }
+
+export default App;
 
 // function App() {
 //   const [messages, setMessages] = useState([]);
@@ -107,5 +120,3 @@ function App() {
 //     </div>
 //   );
 // }
-
-export default App;

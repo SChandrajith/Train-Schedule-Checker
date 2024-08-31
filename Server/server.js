@@ -64,34 +64,34 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-// app.post("/api/train-locations", (req, res) => {
-//   const data = req.body;
-//   console.log("Received data:", data);
+app.post("/api/train-locations", (req, res) => {
+  const data = req.body;
+  console.log("Received data:", data);
 
-//   try {
-//     const { trainId, latitude, longitude } = req.body;
+  try {
+    const { trainId, latitude, longitude } = req.body;
 
-//     if (!trainId || !latitude || !longitude) {
-//       console.log("all field require");
-//       return res.status(400).json({ error: "All fields are required" });
-//     }
+    if (!trainId || !latitude || !longitude) {
+      console.log("all field require");
+      return res.status(400).json({ error: "All fields are required" });
+    }
 
-//     const newLocation = new TrainLocation({
-//       trainId,
-//       latitude,
-//       longitude,
-//       timestamp: Date.now(),
-//     });
+    const newLocation = new TrainLocation({
+      trainId,
+      latitude,
+      longitude,
+      timestamp: Date.now(),
+    });
 
-//     newLocation.save();
+    newLocation.save();
 
-//     res.status(201).json({ message: "Location data saved successfully" });
-//     console.log("saved");
-//   } catch (error) {
-//     res.status(500).json({ error: "Error saving location data" });
-//     console.log(error);
-//   }
-// });
+    res.status(201).json({ message: "Location data saved successfully" });
+    console.log("saved");
+  } catch (error) {
+    res.status(500).json({ error: "Error saving location data" });
+    console.log(error);
+  }
+});
 
 app.get("/api/train-locations/:trainId/latest", async (req, res) => {
   console.log("first");
